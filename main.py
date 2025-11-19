@@ -20,7 +20,6 @@ def validate_package(width: float, height: float, length: float, mass: float) ->
     return True
 
 
-
 def sort(width: float, height: float, length: float, mass: float) -> str:
     """Sort the package into a stack.
 
@@ -40,7 +39,11 @@ def sort(width: float, height: float, length: float, mass: float) -> str:
 
     # Check if the package is oversized
     has_big_volume = volume >= MAX_VOLUME  # cm³
-    has_any_side_too_long = width >= MAX_SIDE_LENGTH or height >= MAX_SIDE_LENGTH or length >= MAX_SIDE_LENGTH  # cm
+    has_any_side_too_long = (
+        width >= MAX_SIDE_LENGTH
+        or height >= MAX_SIDE_LENGTH
+        or length >= MAX_SIDE_LENGTH
+    )  # cm
 
     # Check if the package is bulky or heavy
     is_bulky = has_big_volume or has_any_side_too_long
