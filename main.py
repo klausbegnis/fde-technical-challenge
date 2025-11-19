@@ -26,8 +26,7 @@ def sort(width: float, height: float, length: float, mass: float) -> str:
         return "REJECTED"
     elif is_bulky or is_heavy:
         return "SPECIAL"
-    else:
-        return "STANDARD"
+    return "STANDARD"
 
 
 if __name__ == "__main__":
